@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f0f0;
+  margin-top: 40px;
+}
+
+.wheel-container {
+  display: flex;
+  flex-direction: column;   /* Stack wheels vertically */
+  align-items: center;
+  gap: 30px;                /* More spacing for clarity */
+  margin-bottom: 20px;
+}
+
+.wheel-wrapper {
+  position: relative;
+}
+
+.wheel {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #333;
+  background: conic-gradient(
+    #442424 0deg 22.5deg,
+    #cebbbf 22.5deg 45deg,
+    #442424 45deg 67.5deg,
+    #cebbbf 67.5deg 90deg,
+    #442424 90deg 112.5deg,
+    #cebbbf 112.5deg 135deg,
+    #442424 135deg 157.5deg,
+    #cebbbf 157.5deg 180deg,
+    #442424 180deg 202.5deg,
+    #cebbbf 202.5deg 225deg,
+    #442424 225deg 247.5deg,
+    #cebbbf 247.5deg 270deg,
+    #442424 270deg 292.5deg,
+    #cebbbf 292.5deg 315deg,
+    #442424 315deg 337.5deg,
+    #cebbbf 337.5deg 360deg
+  );
+  transition: transform 8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+/* 🔹 Pointer pointing upward from bottom */
+.pointer {
+  position: absolute;
+  bottom: -10px;                  /* Place it below the wheel */
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg); /* Flip it upward */
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #bc0707;    /* Now pointing upward */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 30px;
+  cursor: pointer;
+}
